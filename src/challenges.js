@@ -81,28 +81,20 @@ function filterOut(words, filters) {
     return words;
 
   } else {
-    
-    const finalResult = [];
+
+    //De esta manera realizamos una copia del array y no alteramos el original
+    const result = words.slice();
 
     for (let i = 0; i < filters.length; i++) {
       const filter = filters[i];
-      for (let j = 0; j < words.length; j++) {
-        const word = words[j];
+      for (let j = 0; j < result.length; j++) {
+        const word = result[j];
         if(word === filter){
-          delete words[j];
+          //Eliminamos elementos del array alterando la copia
+          result.splice(result.indexOf(word),1);
         }
       }
     }
-
-
-    for (let i = 0; i < words.length; i++){
-      const word = words[i];
-      if( word !== undefined){
-        finalResult.push(word);
-      }
-    }
-
-    return finalResult;
 
     return result;
 
@@ -127,7 +119,18 @@ const duplicateWords = [
   "bring"
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(words) {
+  const uniqueWords = [];
+  if (words.length === 0){
+    return null;
+  } else {
+    const result = [];
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+      
+    }
+  }
+}
 
 
 
