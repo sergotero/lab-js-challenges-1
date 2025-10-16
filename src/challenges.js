@@ -71,7 +71,43 @@ function multiplyBy(numbers, number) {
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
-function filterOut() {}
+function filterOut(words, filters) {
+  if (words.length === 0){
+
+    return null;
+
+  } else if (filters.length === 0) {
+    
+    return words;
+
+  } else {
+    
+    const finalResult = [];
+
+    for (let i = 0; i < filters.length; i++) {
+      const filter = filters[i];
+      for (let j = 0; j < words.length; j++) {
+        const word = words[j];
+        if(word === filter){
+          delete words[j];
+        }
+      }
+    }
+
+
+    for (let i = 0; i < words.length; i++){
+      const word = words[i];
+      if( word !== undefined){
+        finalResult.push(word);
+      }
+    }
+
+    return finalResult;
+
+    return result;
+
+  }
+}
 
 
 
