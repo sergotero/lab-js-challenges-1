@@ -13,7 +13,22 @@ const repeatedWords = [
   "matter"
 ];
 
-function howManyTimes() {}
+function howManyTimes(words, word) {
+  let counter;
+  if (words.length === 0){
+    counter = 0;
+    return counter;
+  } else {
+    counter = 0;
+    for (let i = 0; i < words.length; i++) {
+      const term = words[i].toLowerCase();
+      if (term === word.toLowerCase()){
+        counter++;
+      }
+    }
+  }
+  return counter;
+}
 
 
 
