@@ -34,7 +34,17 @@ function howManyTimes(words, word) {
 
 
 // Iteration 2 | Number Sequence
-function createSequence() {}
+function createSequence(number) {
+  if (number === 0) {
+    return [];
+  } else {
+    let array = [];
+    for (let i = 0; i <= number; i++) {
+      array.push(i);
+    }
+    return array;
+  }
+}
 
 
 
