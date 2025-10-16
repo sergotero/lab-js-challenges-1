@@ -52,7 +52,17 @@ function createSequence(number) {
 // Iteration 3 | Multiply for Each
 const numbers = [1, 2, 5, 10, 13, 50];
 
-function multiplyBy() {}
+function multiplyBy(numbers, number) {
+  if (numbers.length === 0){
+    return [];
+  } else {
+    const array = [];
+    numbers.forEach(num =>{
+      array.push((num*number))
+    });
+    return array;
+  }
+}
 
 
 
