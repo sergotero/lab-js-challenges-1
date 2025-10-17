@@ -120,15 +120,37 @@ const duplicateWords = [
 ];
 
 function uniquifyArray(words) {
-  const uniqueWords = [];
+
+  const finalResult = [];
+
   if (words.length === 0){
+
     return null;
+
   } else {
-    const result = [];
+
+    const wordCounter = {};
+    
     for (let i = 0; i < words.length; i++) {
+      let counter = 0;
       const word = words[i];
       
+      for (let j = 0; j < words.length; j++) {
+        const otherWord = words[j];
+
+        if (word === otherWord){
+          counter += 1;
+        }
+      }
+
+      wordCounter[word] = counter;
     }
+
+    for (const key in wordCounter) {
+      finalResult.push(key);
+    }
+
+    return finalResult;
   }
 }
 
